@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Gyreheros";
+  font-style: normal;
+  font-weight: regular;
+  font-display: swap;
+  src: url("./texgyreheros-regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Gyreheros";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("./texgyreheros-bold.otf") format("opentype");
+}

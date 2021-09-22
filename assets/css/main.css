@@ -1,0 +1,13 @@
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'case', 'rlig', 'calt' 0;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', system-ui, sans-serif;
+  }
+}

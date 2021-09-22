@@ -1,0 +1,11 @@
+version: "3"
+services:
+  frontpage:
+    volumes:
+      - .:/usr/src/app
+
+    build:
+      context: .
+
+    ports:
+      - "8082:80"

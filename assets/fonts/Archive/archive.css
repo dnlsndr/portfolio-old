@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "Archive";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("./Archive-Regular.otf") format("opentype");
+}
