@@ -22,7 +22,7 @@
 
 		<div class="text-xl mb-16 lg:mb-24 lg:mb-18 text-gray-600">
 			Creating software, finding solutions to hard problems <br />
-			and designing user interfaces are the ways I express myself. <br />
+			and designing user interfaces are some the ways I express myself. <br />
 		</div>
 		<h4
 			class="
@@ -47,13 +47,13 @@
 		<h4 class="text-2xl lg:text-4xl font-black mb-6">Experience</h4>
 
 		<section
-			class="grid grid-cols-[auto,1fr] gap-x-4 gap-y-8 mb-16 lg:max-w-md"
+			class="grid grid-cols-[auto,1fr] gap-x-8 gap-y-8 mb-16 lg:max-w-md"
 		>
 			<div class="text-right">
 				<div class="text-lg text-gray-500">May</div>
 				<div class="text-lg font-bold">2019</div>
 			</div>
-			<div class="border-l-4 border-gray-700 pl-4">
+			<div class="border-l-2 border-gray-700 pl-4">
 				<div class="text-lg font-bold mb-3">
 					Hotellistat GmbH · Head of Engineering
 				</div>
@@ -67,7 +67,7 @@
 				<div class="text-lg text-gray-500">March</div>
 				<div class="text-lg font-bold">2018</div>
 			</div>
-			<div class="border-l-4 border-gray-700 pl-4">
+			<div class="border-l-2 border-gray-700 pl-4">
 				<div class="text-lg font-bold mb-3">
 					Hotellistat GmbH · Working student
 				</div>
@@ -81,7 +81,7 @@
 				<div class="text-lg text-gray-500">June</div>
 				<div class="text-lg font-bold">2016</div>
 			</div>
-			<div class="border-l-4 border-gray-700 pl-4">
+			<div class="border-l-2 border-gray-700 pl-4">
 				<div class="text-lg font-bold mb-3">
 					Benedikt Pauli IT management & Business development
 				</div>
@@ -95,7 +95,7 @@
 				<div class="text-lg text-gray-500">January</div>
 				<div class="text-lg font-bold">2014</div>
 			</div>
-			<div class="border-l-4 border-gray-700 pl-4">
+			<div class="border-l-2 border-gray-700 pl-4">
 				<div class="text-lg font-bold mb-3">
 					My first programming experieces
 				</div>
