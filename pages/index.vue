@@ -22,7 +22,8 @@
 
 		<div class="text-xl mb-16 lg:mb-24 lg:mb-18 text-gray-600">
 			Creating software, finding solutions to hard problems <br />
-			and designing user interfaces are some the ways I express myself. <br />
+			and designing user interfaces are some of the ways I express myself.
+			<br />
 		</div>
 		<h4
 			class="
