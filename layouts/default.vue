@@ -15,10 +15,10 @@
 		>
 			<NavigationLinks />
 		</div>
-		<section class="mb-10">
+		<section class="mb-16">
 			<Nuxt />
 		</section>
-		<separator class="mb-8" />
+		<separator class="mb-16" />
 
 		<div class="text-2xl lg:text-4xl font-black mb-4">Important notes</div>
 		<div class="text-lg mb-8">Don't do drugs & drink water</div>

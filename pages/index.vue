@@ -20,109 +20,45 @@
 			from Munich, Germany.<br />
 		</div>
 
-		<div class="text-xl mb-16 lg:mb-24 lg:mb-18 text-gray-600">
-			Creating software, finding solutions to hard problems <br />
-			and designing user interfaces are some of the ways I express myself.
-			<br />
+		<div class="mb-12 max-w-lg text-justify">
+			Creating software, finding solutions to hard problems and designing user
+			interfaces are some of the ways I express myself.
 		</div>
-		<h4
-			class="
-				bg-gray-800
-				px-4
-				py-2
-				text-xl
-				!text-white
-				font-courier
-				inline-block
-				!font-medium
-				!mb-4
-			"
-		>
-			Areas of interest
-		</h4>
-		<div class="text-lg mb-16 text-gray-600">
+
+		<h4 class="text-lg font-bold">Languages I speak</h4>
+		<div class="mb-12 lg:mb-18">German & English</div>
+
+		<h4 class="text-lg font-bold">Areas of interest</h4>
+		<div class="mb-16">
 			Distributed systems · Software engineering · Process automation · UX/UI
 		</div>
 
 		<separator class="mb-16" />
-		<h4 class="text-2xl lg:text-4xl font-black mb-6">Experience</h4>
+		<h4 class="text-2xl lg:text-4xl font-black mb-16">Experience</h4>
 
 		<section
-			class="grid grid-cols-[auto,1fr] gap-x-8 gap-y-8 mb-16 lg:max-w-md"
+			class="grid grid-cols-[auto,1fr] gap-x-8 md:gap-x-24 gap-y-14 mb-16"
 		>
-			<div class="text-right">
-				<div class="text-lg text-gray-500">May</div>
-				<div class="text-lg font-bold">2019</div>
-			</div>
-			<div class="border-l-2 border-gray-700 pl-4">
-				<div class="text-lg font-bold mb-3">
-					Hotellistat GmbH · Head of Engineering
+			<div class="text-lg font-light">Duration</div>
+			<div class="text-lg font-light">Description</div>
+
+			<template v-for="experience in experiences">
+				<div class="font-bold text-lg" :key="experience.start">
+					{{ experience.distance }}
 				</div>
-				<p class="text-gray-500">
-					With our development team growing, I got promoted to Head of
-					Engineering. Taking care of project mamangement, infrastructure,
-					dev-ops and more.
-				</p>
-			</div>
-			<div class="text-right">
-				<div class="text-lg text-gray-500">March</div>
-				<div class="text-lg font-bold">2018</div>
-			</div>
-			<div class="border-l-2 border-gray-700 pl-4">
-				<div class="text-lg font-bold mb-3">
-					Hotellistat GmbH · Working student
+				<div class="lg:max-w-xl" :key="experience.start">
+					<article class="prose max-w-none -mt-8 -mb-6">
+						<NuxtContent :document="experience" />
+					</article>
 				</div>
-				<p class="text-gray-500">
-					I started at Hotellistat as a working student where I was initially
-					responsible for projects such as the internal administration
-					interface.
-				</p>
-			</div>
-			<div class="text-right">
-				<div class="text-lg text-gray-500">June</div>
-				<div class="text-lg font-bold">2016</div>
-			</div>
-			<div class="border-l-2 border-gray-700 pl-4">
-				<div class="text-lg font-bold mb-3">
-					Benedikt Pauli IT management & Business development
-				</div>
-				<p class="text-gray-500">
-					Benedikt gave me the chance to professionally enter software
-					development. He taught me how to work with version management and
-					large repositories.
-				</p>
-			</div>
-			<div class="text-right">
-				<div class="text-lg text-gray-500">January</div>
-				<div class="text-lg font-bold">2014</div>
-			</div>
-			<div class="border-l-2 border-gray-700 pl-4">
-				<div class="text-lg font-bold mb-3">
-					My first programming experieces
-				</div>
-				<p class="text-gray-500">
-					I started programming after having read up on microcontrollers and
-					arduinos. I started creating programs e.g. that used inverse
-					kinematics for controlling a robotic arm. This is where I also started
-					reading up on IOT and espressif microcontrollers such as the esp32.
-				</p>
-			</div>
+			</template>
 		</section>
 		<separator class="mb-16" />
 
-		<div class="text-2xl lg:text-4xl font-black mb-6">
+		<div class="text-2xl lg:text-4xl font-black mb-16">
 			Technologies I work with
 		</div>
-		<div
-			class="
-				mb-16
-				grid grid-cols-1
-				md:grid-cols-2
-				lg:grid-cols-3
-				max-w-7xl
-				gap-8
-			"
-		>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl gap-8">
 			<nuxt-link
 				v-for="technology in technologies"
 				:to="'/technologies/' + technology.slug"
@@ -178,6 +114,7 @@
 import { PhArrowRight } from 'phosphor-vue'
 import Separator from '@/components/Separator.vue'
 import KnowledgeIndicator from '@/components/KnowledgeIndicator.vue'
+import { formatDistance } from 'date-fns'
 export default {
 	components: {
 		PhArrowRight,
@@ -220,8 +157,21 @@ export default {
 			.sortBy('title', 'asc')
 			.fetch()
 
+		let experiences = await $content('experience', { deep: true })
+			.sortBy('start', 'desc')
+			.fetch()
+
+		experiences = experiences.map((exp) => ({
+			...exp,
+			distance: formatDistance(
+				new Date(exp.start),
+				exp.end == 'now' ? new Date() : new Date(exp.end)
+			),
+		}))
+
 		return {
 			technologies,
+			experiences,
 		}
 	},
 }
