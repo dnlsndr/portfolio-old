@@ -15,8 +15,6 @@
 				<br />
 				81677 Munich, Germany
 				<br />
-				Phone: +49 176 62992930
-				<br />
 				Email: daniel.schneider@eramux.com
 			</p>
 		</section>
