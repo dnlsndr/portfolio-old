@@ -4,7 +4,7 @@
 			<div class="bg-gray-800 px-4 py-2 !text-white font-courier">ABOUT ME</div>
 		</div>
 
-		<section class="max-w-md prose text-justify">
+		<section class="max-w-md prose dark:prose-invert text-justify">
 			<p class="">
 				Hi! &#128075; My name is Daniel Schneider. <br />
 				I've started developing software starting by the age of 14. It has

@@ -1,5 +1,14 @@
 <template>
-	<div class="p-8 lg:p-12 text-gray-800">
+	<div
+		class="
+			min-h-screen
+			p-8
+			lg:p-12
+			bg-white
+			text-gray-800
+			dark:bg-gray-900 dark:text-white
+		"
+	>
 		<div
 			class="
 				lg:flex
@@ -11,6 +20,7 @@
 				border-4
 				lg:border-none
 				border-current
+				dark:border-gray-800
 			"
 		>
 			<NavigationLinks />

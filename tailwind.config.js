@@ -7,9 +7,14 @@ const colors = require('tailwindcss/colors')
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
-  mode: 'jit',
   darkMode: 'class',
-
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}"
+  ],
   theme: {
     extend: {
       colors: {
@@ -26,13 +31,5 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-  purge: {
-    content: [
-      './src/**/*.vue',
-      './src/**/*.ts',
-      './src/**/*.js',
-      './src/**/*.html',
-      './public/**/*.html'
-    ]
-  }
+
 }

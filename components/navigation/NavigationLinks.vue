@@ -16,8 +16,7 @@
 						block
 						px-4
 						py-3
-						lg:hover:bg-white
-						lg:border-t-4 lg:border-r-4 lg:border-b-4
+						lg:hover:bg-white lg:border-t-4 lg:border-r-4 lg:border-b-4
 						border-gray-800
 						lg:hover:text-gray-800
 						transition-colors
@@ -26,8 +25,8 @@
 					"
 					:class="[
 						(link.exactActive ? isExactActive : isActive)
-							? 'bg-white text-gray-800'
-							: 'bg-gray-800 text-white',
+							? 'bg-white dark:bg-gray-800 text-gray-800 dark:text-white'
+							: 'bg-gray-800 dark:bg-gray-900  text-white dark:text-gray-400',
 						index === 0 ? 'lg:border-l-4' : '',
 					]"
 				>

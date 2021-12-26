@@ -7,9 +7,11 @@
 			<p class="max-w-md text-justify mb-8">
 				You can reach me under the following email:
 			</p>
-			<address class="not-italic font-bold text-2xl">
-				daniel.schneider@eramux.com
-			</address>
+			<client-only placeholder="Loading...">
+				<address class="not-italic font-bold lg:text-2xl">
+					daniel.schneider@eramux.com
+				</address>
+			</client-only>
 		</section>
 	</div>
 </template>

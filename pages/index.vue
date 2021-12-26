@@ -2,52 +2,88 @@
 	<div>
 		<div
 			class="
-				text-3xl
-				sm:text-4xl
-				lg:text-5xl
-				font-black
-				mb-8
-				font-courier
-				leading-relaxed
-				sm:leading-relaxed
-				lg:leading-relaxed
+				flex
+				items-center
+				lg:items-start
+				flex-col
+				lg:flex-row
+				gap-x-16
+				mb-16
 			"
 		>
-			Hi!&#128075; <br />
-			I'm
-			<span class="bg-gray-800 px-4 pt-2 text-white">Daniel Schneider</span
-			><br />
-			from Munich, Germany.<br />
-		</div>
+			<nuxt-img
+				src="/me.jpg"
+				class="w-60 rounded-full lg:sticky top-8 mb-16 lg:mb-0"
+			/>
+			<section class="relative z-10 text-center lg:text-left">
+				<div
+					class="
+						mb-8
+						text-3xl
+						sm:text-4xl
+						lg:text-5xl
+						font-black font-courier
+						leading-relaxed
+						sm:leading-relaxed
+						lg:leading-relaxed
+					"
+				>
+					Hi!&#128075; I'm
+					<span
+						class="
+							bg-gray-800
+							dark:bg-white
+							px-4
+							pt-2
+							text-white
+							dark:text-gray-800
+						"
+						>Daniel</span
+					>
+					from Munich
+				</div>
+				<div class="mb-12">
+					Creating software, finding solutions to hard problems and designing
+					user interfaces are some of the ways I express myself.
+				</div>
 
-		<div class="mb-12 max-w-lg text-justify">
-			Creating software, finding solutions to hard problems and designing user
-			interfaces are some of the ways I express myself.
-		</div>
+				<h4 class="text-gray-500">Languages I speak</h4>
+				<div class="mb-12 lg:mb-18 font-medium">German & English</div>
 
-		<h4 class="text-lg font-bold">Languages I speak</h4>
-		<div class="mb-12 lg:mb-18">German & English</div>
-
-		<h4 class="text-lg font-bold">Areas of interest</h4>
-		<div class="mb-16">
-			Distributed systems · Software engineering · Process automation · UX/UI
+				<h4 class="text-gray-500">Areas of interest</h4>
+				<div class="font-medium">
+					Distributed systems · Software engineering · Process automation ·
+					UX/UI
+				</div>
+			</section>
 		</div>
 
 		<separator class="mb-16" />
 		<h4 class="text-2xl lg:text-4xl font-black mb-16">Experience</h4>
 
 		<section
-			class="grid grid-cols-[auto,1fr] gap-x-8 md:gap-x-24 gap-y-14 mb-16"
+			class="
+				grid
+				lg:grid-cols-[auto,1fr]
+				gap-x-8
+				md:gap-x-24
+				gap-y-4
+				lg:gap-y-14
+				mb-16
+			"
 		>
-			<div class="text-lg font-light">Duration</div>
-			<div class="text-lg font-light">Description</div>
+			<div class="text-lg font-light hidden lg:block">Duration</div>
+			<div class="text-lg font-light hidden lg:block">Description</div>
 
 			<template v-for="experience in experiences">
-				<div class="font-bold text-lg" :key="experience.start">
+				<div
+					class="font-bold text-lg text-gray-500 dark:text-gray-500"
+					:key="experience.start"
+				>
 					{{ experience.distance }}
 				</div>
-				<div class="lg:max-w-xl" :key="experience.start">
-					<article class="prose max-w-none -mt-8 -mb-6">
+				<div class="lg:max-w-xl mb-16 lg:mb-0" :key="experience.start">
+					<article class="prose dark:prose-invert max-w-none -mt-8 -mb-6">
 						<NuxtContent :document="experience" />
 					</article>
 				</div>

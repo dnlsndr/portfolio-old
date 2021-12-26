@@ -63,7 +63,27 @@ export default {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap",
       }
-    ]
+    ],
+    // script: [
+    //   {
+    //     innerHTML: `
+    //     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    //       document.documentElement.classList.add('dark')
+    //     } else {
+    //       document.documentElement.classList.remove('dark')
+    //     }
+
+    //     // Whenever the user explicitly chooses light mode
+    //     localStorage.theme = 'light'
+
+    //     // Whenever the user explicitly chooses dark mode
+    //     localStorage.theme = 'dark'
+
+    //     // Whenever the user explicitly chooses to respect the OS preference
+    //     localStorage.removeItem('theme')
+    //     `
+    //   }
+    // ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -82,10 +102,23 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxt/image',
+    '@nuxt/postcss8',
     '@nuxtjs/composition-api/module',
-    '@nuxtjs/tailwindcss',
   ],
+
+  image: {
+    // The screen sizes predefined by `@nuxt/image`:
+    screens: {
+      xs: 360,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536
+    },
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -108,5 +141,11 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
   }
 }
