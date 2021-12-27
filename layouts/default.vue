@@ -31,7 +31,7 @@
 		<separator class="mb-16" />
 
 		<div class="text-2xl lg:text-4xl font-black mb-4">Important notes</div>
-		<div class="text-lg mb-8">Don't do drugs & drink water</div>
+		<div class="text-lg mb-8">Don't do drugs & drink enough water</div>
 		<div class="flex items-center space-x-2">
 			<div>Made with</div>
 			<ph-heart size="20" weight="fill" />

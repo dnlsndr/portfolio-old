@@ -12,8 +12,19 @@
 			"
 		>
 			<nuxt-img
+				preset="avatar"
 				src="/me.jpg"
-				class="w-60 rounded-full lg:sticky top-8 mb-16 lg:mb-0"
+				sizes="xs:480px lg:240px"
+				class="
+					w-60
+					rounded-full
+					lg:sticky
+					top-8
+					mb-16
+					lg:mb-0
+					shadow-2xl
+					dark:shadow-indigo-500/10
+				"
 			/>
 			<section class="relative z-10 text-center lg:text-left">
 				<div
@@ -77,13 +88,15 @@
 
 			<template v-for="experience in experiences">
 				<div
-					class="font-bold text-lg text-gray-500 dark:text-gray-500"
+					class="lg:font-bold text-lg text-gray-500 dark:text-gray-500"
 					:key="experience.start"
 				>
 					{{ experience.distance }}
 				</div>
 				<div class="lg:max-w-xl mb-16 lg:mb-0" :key="experience.start">
-					<article class="prose dark:prose-invert max-w-none -mt-8 -mb-6">
+					<article
+						class="prose dark:prose-invert max-w-none -mt-8 -mb-6 text-left"
+					>
 						<NuxtContent :document="experience" />
 					</article>
 				</div>
@@ -99,20 +112,16 @@
 				v-for="technology in technologies"
 				:to="'/technologies/' + technology.slug"
 				:key="technology.position"
-				class="w-full p-6 shadow-xl bg-gray-800 flex flex-col group"
+				class="w-full p-6 shadow-xl bg-gray-800 flex flex-col group rounded"
 			>
 				<div class="flex items-center mb-6">
-					<div v-if="technology.icon">
-						<img :src="technology.icon" class="w-12" />
+					<div v-if="technology.icon" class="">
+						<img :src="technology.icon" class="w-10" />
 					</div>
 					<div :class="[technology.icon ? 'ml-5' : '']">
 						<div class="tracking-wide text-xl font-bold mb-2 text-white">
 							{{ technology.title }}
 						</div>
-						<knowledge-indicator
-							class="self-baseline"
-							:knowledge="technology.knowledge"
-						/>
 					</div>
 				</div>
 				<div
@@ -187,7 +196,6 @@ export default {
 
 	async asyncData({ $content, store, app, params, error }) {
 		let technologies = await $content('technologies', { deep: true })
-			.only(['icon', 'title', 'description', 'position', 'knowledge', 'slug'])
 			.sortBy('position', 'asc')
 			.sortBy('knowledge', 'desc')
 			.sortBy('title', 'asc')

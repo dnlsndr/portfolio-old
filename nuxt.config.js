@@ -118,6 +118,14 @@ export default {
       xxl: 1536,
       '2xl': 1536
     },
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'jpg',
+          width: 480,
+        }
+      }
+    }
   },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
