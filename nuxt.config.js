@@ -13,11 +13,11 @@ export default {
       { name: "theme-color", content: "#ffffff" },
       {
         name: 'twitter:site',
-        content: '@onmyflow',
+        content: '@dnl_sndr',
       },
       {
         name: 'twitter:creator',
-        content: '@onmyflow',
+        content: '@dnl_sndr',
       },
     ],
     link: [
@@ -64,26 +64,6 @@ export default {
         href: "https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap",
       }
     ],
-    // script: [
-    //   {
-    //     innerHTML: `
-    //     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    //       document.documentElement.classList.add('dark')
-    //     } else {
-    //       document.documentElement.classList.remove('dark')
-    //     }
-
-    //     // Whenever the user explicitly chooses light mode
-    //     localStorage.theme = 'light'
-
-    //     // Whenever the user explicitly chooses dark mode
-    //     localStorage.theme = 'dark'
-
-    //     // Whenever the user explicitly chooses to respect the OS preference
-    //     localStorage.removeItem('theme')
-    //     `
-    //   }
-    // ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -105,7 +85,16 @@ export default {
     '@nuxt/image',
     '@nuxt/postcss8',
     '@nuxtjs/composition-api/module',
+    '@nuxtjs/google-fonts',
   ],
+
+  googleFonts: {
+    families: {
+      Outfit: {
+        wght: [400, 500, 600, 700, 800, 900]
+      }
+    }
+  },
 
   image: {
     // The screen sizes predefined by `@nuxt/image`:

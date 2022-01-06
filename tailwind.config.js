@@ -18,10 +18,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gray: colors.gray
+        gray: {
+          ...colors.neutral,
+          "1000": "#121212"
+        }
       },
       fontFamily: {
-        "courier": ['Courier Prime', 'monospace']
+        "courier": ['Courier Prime', 'monospace'],
+        outfit: ["Outfit", "Inter", "ui-sans-serif", "system-ui"]
       },
       // typography: (theme) => ({
 

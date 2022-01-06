@@ -3,8 +3,7 @@ start: 2019-05-01
 end: now
 ---
 
-### Hotellistat GmbH · Head of Engineering
+### VP of engineering at Hotellistat
 
-With our development team growing, I got promoted to Head of
-Engineering. Taking care of project mamangement, infrastructure,
-dev-ops and more.
+As VP of engineering, I am responsible for the Hotellistat technology landscape,
+developing new systems, researching new solutions and managing our dev-team.

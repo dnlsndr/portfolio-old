@@ -1,113 +1,58 @@
 <template>
 	<div>
-		<div
-			class="
-				flex
-				items-center
-				lg:items-start
-				flex-col
-				lg:flex-row
-				gap-x-16
-				mb-16
-			"
-		>
-			<nuxt-img
-				preset="avatar"
-				src="/me.jpg"
-				sizes="xs:480px lg:240px"
-				class="
-					w-60
-					rounded-full
-					lg:sticky
-					top-8
-					mb-16
-					lg:mb-0
-					shadow-2xl
-					dark:shadow-indigo-500/10
-				"
-			/>
-			<section class="relative z-10 text-center lg:text-left">
-				<div
-					class="
-						mb-8
-						text-3xl
-						sm:text-4xl
-						lg:text-5xl
-						font-black font-courier
-						leading-relaxed
-						sm:leading-relaxed
-						lg:leading-relaxed
-					"
-				>
-					Hi!&#128075; I'm
-					<span
-						class="
-							bg-gray-800
-							dark:bg-white
-							px-4
-							pt-2
-							text-white
-							dark:text-gray-800
-						"
-						>Daniel</span
-					>
-					from Munich
-				</div>
-				<div class="mb-12">
-					Creating software, finding solutions to hard problems and designing
-					user interfaces are some of the ways I express myself.
-				</div>
+		<currently-playing class="mb-16" />
 
-				<h4 class="text-gray-500">Languages I speak</h4>
-				<div class="mb-12 lg:mb-18 font-medium">German & English</div>
-
-				<h4 class="text-gray-500">Areas of interest</h4>
-				<div class="font-medium">
-					Distributed systems · Software engineering · Process automation ·
-					UX/UI
-				</div>
-			</section>
+		<nuxt-img
+			preset="avatar"
+			src="/me.jpg"
+			sizes="xs:480px lg:240px"
+			class="w-20 rounded-full mb-6 lg:mb-0"
+		/>
+		<div class="mb-1 text-2xl font-semibold font-outfit">Daniel Schneider</div>
+		<div class="mb-4 text font-normal text-gray-200">
+			VP of engineering at
+			<b>Hotellistat</b>
+		</div>
+		<div class="mb-12 text-gray-400">
+			Creating software, finding solutions to hard problems and designing
+			user interfaces
 		</div>
 
-		<separator class="mb-16" />
-		<h4 class="text-2xl lg:text-4xl font-black mb-16">Experience</h4>
+		<h4 class="text-gray-200 mb-1">Languages</h4>
+		<div class="mb-12 text-gray-400">German & English</div>
 
-		<section
-			class="
-				grid
-				lg:grid-cols-[auto,1fr]
-				gap-x-8
-				md:gap-x-24
-				gap-y-4
-				lg:gap-y-14
-				mb-16
-			"
-		>
-			<div class="text-lg font-light hidden lg:block">Duration</div>
-			<div class="text-lg font-light hidden lg:block">Description</div>
-
-			<template v-for="experience in experiences">
-				<div
-					class="lg:font-bold text-lg text-gray-500 dark:text-gray-500"
-					:key="experience.start"
-				>
-					{{ experience.distance }}
-				</div>
-				<div class="lg:max-w-xl mb-16 lg:mb-0" :key="experience.start">
-					<article
-						class="prose dark:prose-invert max-w-none -mt-8 -mb-6 text-left"
-					>
-						<NuxtContent :document="experience" />
-					</article>
-				</div>
-			</template>
-		</section>
-		<separator class="mb-16" />
-
-		<div class="text-2xl lg:text-4xl font-black mb-16">
-			Technologies I work with
+		<h4 class="text-gray-200 mb-1">Areas of interest</h4>
+		<div class="text-gray-400 mb-16">
+			Distributed systems · Software engineering · Process automation ·
+			UX/UI
 		</div>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl gap-8">
+
+		<separator class="col-span-full mb-16" />
+
+		<div class="flex flex-col gap-y-8 mb-16">
+			<h4 class="text-lg font-outfit text-gray-200">Stats</h4>
+			<div class="flex items-baseline">
+				<div class="text-2xl font-outfit">{{ totalExperience }}</div>
+				<div class="text-gray-400 text-base ml-4">total years of experience</div>
+			</div>
+
+			<div v-for="(experience, index) in experiences" :key="index">
+				<div class="flex items-baseline mb-2">
+					<div class="text-2xl font-outfit">{{ experience.distance }}</div>
+					<div class="text-gray-400 text-base ml-4">years</div>
+				</div>
+
+				<article
+					class="block prose prose-gray prose-h3:text-lg dark:prose-invert prose-headings:text-gray-200 prose-p:text-gray-400 prose-headings:mt-0 prose-headings:mb-4 prose-headings:font-outfit prose-headings:font-medium prose-p:leading-normal prose-p:text-left"
+				>
+					<NuxtContent :document="experience" />
+				</article>
+			</div>
+		</div>
+		<separator class="mb-16" />
+
+		<h4 class="text-lg font-outfit text-gray-200">Stuff I use</h4>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl gap-8 col-span-full">
 			<nuxt-link
 				v-for="technology in technologies"
 				:to="'/technologies/' + technology.slug"
@@ -115,38 +60,22 @@
 				class="w-full p-6 shadow-xl bg-gray-800 flex flex-col group rounded"
 			>
 				<div class="flex items-center mb-6">
-					<div v-if="technology.icon" class="">
+					<div v-if="technology.icon" class>
 						<img :src="technology.icon" class="w-10" />
 					</div>
 					<div :class="[technology.icon ? 'ml-5' : '']">
-						<div class="tracking-wide text-xl font-bold mb-2 text-white">
-							{{ technology.title }}
-						</div>
+						<div
+							class="tracking-wide text-xl font-medium font-outfit mb-2 text-white"
+						>{{ technology.title }}</div>
 					</div>
 				</div>
+				<div class="text-opacity-75 text-gray-300 mb-6 flex-1" v-html="technology.description"></div>
 				<div
-					class="text-opacity-75 text-gray-300 mb-6 flex-1 text-justify"
-					v-html="technology.description"
-				></div>
-				<div
-					class="
-						flex
-						items-center
-						transition-all
-						duration-150
-						text-white
-						lg:text-gray-500
-						group-hover:text-white
-					"
+					class="flex items-center transition-all duration-150 text-white lg:text-gray-500 group-hover:text-white"
 				>
 					<div class="mr-2">Read More</div>
 					<ph-arrow-right
-						class="
-							transform
-							transition-all
-							duration-150
-							group-hover:translate-x-1
-						"
+						class="transform transition-all duration-150 group-hover:translate-x-1"
 						size="20"
 					/>
 				</div>
@@ -158,12 +87,14 @@
 <script>
 import { PhArrowRight } from 'phosphor-vue'
 import Separator from '@/components/Separator.vue'
+import CurrentlyPlaying from '@/components/CurrentlyPlaying.vue'
 import KnowledgeIndicator from '@/components/KnowledgeIndicator.vue'
-import { formatDistance } from 'date-fns'
+import { formatDistanceStrict } from 'date-fns'
 export default {
 	components: {
 		PhArrowRight,
 		Separator,
+		CurrentlyPlaying,
 		KnowledgeIndicator,
 	},
 	head() {
@@ -205,15 +136,31 @@ export default {
 			.sortBy('start', 'desc')
 			.fetch()
 
+		let totalExperience = experiences.map(item => parseInt(formatDistanceStrict(
+			new Date(item.start),
+			item.end == 'now' ? new Date() : new Date(item.end),
+			{
+				roundingMethod: "ceil",
+				unit: "month",
+				addSuffix: false
+			}
+		)) / 12).reduce((a, b) => a + b).toFixed(1)
+
 		experiences = experiences.map((exp) => ({
 			...exp,
-			distance: formatDistance(
+			distance: (parseInt(formatDistanceStrict(
 				new Date(exp.start),
-				exp.end == 'now' ? new Date() : new Date(exp.end)
-			),
+				exp.end == 'now' ? new Date() : new Date(exp.end),
+				{
+					roundingMethod: "ceil",
+					unit: "month",
+					addSuffix: false
+				}
+			)) / 12).toFixed(1),
 		}))
 
 		return {
+			totalExperience,
 			technologies,
 			experiences,
 		}

@@ -1,25 +1,19 @@
 <template>
 	<div>
 		<div class="text-3xl lg:text-4xl font-black mb-3">
-			<div
-				class="bg-gray-800 px-4 py-2 text-white font-courier flex items-center"
-			>
+			<div class="bg-gray-800 px-4 py-2 text-white font-courier flex items-center">
 				<div v-if="document.icon" class="relative flex-strech w-8">
 					<img :src="document.icon" class="h-6" />
 				</div>
-				<div class="mr-4 ml-4">
-					{{ document.title }}
-				</div>
+				<div class="mr-4 ml-4">{{ document.title }}</div>
 			</div>
 		</div>
 		<div class="flex flex-wrap-reverse">
 			<div class="lg:mr-32">
-				<article class="prose max-w-none">
+				<article class="prose prose-gray dark:prose-invert max-w-none">
 					<div class="lg:max-w-md">
 						<div v-if="document.subtitle" class="-mt-4">
-							<p class="text-gray-600">
-								{{ document.subtitle }}
-							</p>
+							<p class="text-gray-600">{{ document.subtitle }}</p>
 						</div>
 
 						<NuxtContent :document="document" />
@@ -27,11 +21,7 @@
 				</article>
 				<ProjectPrevNext :prev="prev" :next="next" />
 			</div>
-			<ContentOverview
-				v-if="!document.fullscreen"
-				:document="document"
-				:toc="document.toc"
-			/>
+			<ContentOverview v-if="!document.fullscreen" :document="document" :toc="document.toc" />
 		</div>
 	</div>
 </template>
