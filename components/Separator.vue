@@ -1,22 +1,27 @@
 <template>
 	<div
 		v-if="!$slots.default"
-		class="flex-shrink-0"
-		:class="[colorClass, vert ? 'w-px self-stretch' : 'h-px w-full']"
+		class="flex-shrink-0 bg-gray-200 dark:bg-gray-700 transition-colors duration-200"
+		:class="[vert ? 'w-px self-stretch' : 'h-px w-full']"
 	></div>
-	<div v-else class="flex items-center">
+	<div
+		v-else
+		class="flex items-center"
+	>
 		<div
 			:class="[
-				'bg-gray-100 dark:bg-gray-700 flex-1',
+				'bg-gray-100 dark:bg-gray-700 transition-colors duration-200 flex-1',
 				vert ? 'w-px self-stretch' : 'h-px w-full',
 			]"
 		></div>
-		<div class="flex-shrink-0 px-2 text-gray-300 dark:text-gray-500">
+		<div
+			class="flex-shrink-0 px-2 text-gray-300 dark:text-gray-500"
+		>
 			<slot />
 		</div>
 		<div
 			:class="[
-				'bg-gray-100 dark:bg-gray-700 flex-1',
+				'bg-gray-100 dark:bg-gray-700 transition-colors duration-200 flex-1',
 				vert ? 'w-px self-stretch' : 'h-px w-full',
 			]"
 		></div>
@@ -29,10 +34,6 @@ export default {
 		vert: {
 			type: Boolean,
 			default: false,
-		},
-		colorClass: {
-			type: String,
-			default: 'bg-gray-200 dark:bg-gray-700 ',
 		},
 	},
 }

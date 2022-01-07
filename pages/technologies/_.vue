@@ -130,8 +130,3 @@ export default {
 	},
 }
 </script>
-<style>
-p {
-	text-align: justify !important;
-}
-</style>

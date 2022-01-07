@@ -1,85 +1,122 @@
 <template>
 	<div>
-		<currently-playing class="mb-16" />
+		<!-- <currently-playing class="mb-16" /> -->
 
 		<nuxt-img
 			preset="avatar"
 			src="/me.jpg"
 			sizes="xs:480px lg:240px"
-			class="w-20 rounded-full mb-6 lg:mb-0"
+			class="w-20 rounded-full mb-6"
 		/>
-		<div class="mb-1 text-2xl font-semibold font-outfit">Daniel Schneider</div>
-		<div class="mb-4 text font-normal text-gray-200">
+		<div
+			class="mb-1 text-2xl font-semibold font-outfit text-gray-900 dark:text-white transition-colors duration-200"
+		>Daniel Schneider</div>
+		<div
+			class="mb-4 text font-normal text-gray-700 dark:text-gray-200 transition-colors duration-200"
+		>
 			VP of engineering at
 			<b>Hotellistat</b>
 		</div>
-		<div class="mb-12 text-gray-400">
+		<div
+			class="mb-12"
+		>
 			Creating software, finding solutions to hard problems and designing
-			user interfaces
+			user interfaces is what I'm all about.
 		</div>
 
-		<h4 class="text-gray-200 mb-1">Languages</h4>
-		<div class="mb-12 text-gray-400">German & English</div>
+		<h4
+			class="text-gray-700 dark:text-gray-200 transition-colors duration-200 mb-1"
+		>Languages</h4>
+		<div
+			class="mb-12"
+		>German & English</div>
 
-		<h4 class="text-gray-200 mb-1">Areas of interest</h4>
-		<div class="text-gray-400 mb-16">
+		<h4
+			class="text-gray-700 dark:text-gray-200 transition-colors duration-200 mb-1"
+		>Areas of interest</h4>
+		<div
+			class="mb-12"
+		>
 			Distributed systems · Software engineering · Process automation ·
 			UX/UI
 		</div>
 
-		<separator class="col-span-full mb-16" />
+		<h4
+			class="text-gray-700 dark:text-gray-200 transition-colors duration-200 mb-1"
+		>Contact</h4>
+		<div>Wanna reach out to me?</div>
+		<div
+			class="mb-16"
+		>
+			<client-only
+				placeholder="Tricking them puny bots..."
+			>
+				<address
+					class="not-italic font-gray-200"
+				>daniel.schneider@eramux.com</address>
+			</client-only>
+		</div>
 
-		<div class="flex flex-col gap-y-8 mb-16">
-			<h4 class="text-lg font-outfit text-gray-200">Stats</h4>
-			<div class="flex items-baseline">
-				<div class="text-2xl font-outfit">{{ totalExperience }}</div>
-				<div class="text-gray-400 text-base ml-4">total years of experience</div>
+		<separator
+			class="col-span-full mb-16"
+		/>
+
+		<div
+			class="flex flex-col gap-y-8 mb-16"
+		>
+			<h4
+				class="text-lg font-outfit text-gray-700 dark:text-gray-200 transition-colors duration-200"
+			>Stats</h4>
+			<div
+				class="flex items-baseline"
+			>
+				<div
+					class="text-2xl font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>{{ totalExperience }}</div>
+				<div
+					class="text-base ml-4"
+				>total years of experience</div>
 			</div>
 
-			<div v-for="(experience, index) in experiences" :key="index">
-				<div class="flex items-baseline mb-2">
-					<div class="text-2xl font-outfit">{{ experience.distance }}</div>
-					<div class="text-gray-400 text-base ml-4">years</div>
+			<div
+				v-for="(experience, index) in experiences"
+				:key="index"
+			>
+				<div
+					class="flex items-baseline mb-4"
+				>
+					<div
+						class="text-2xl font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+					>{{ experience.distance }}</div>
+					<div
+						class="text-base ml-4"
+					>years</div>
 				</div>
 
 				<article
-					class="block prose prose-gray prose-h3:text-lg dark:prose-invert prose-headings:text-gray-200 prose-p:text-gray-400 prose-headings:mt-0 prose-headings:mb-4 prose-headings:font-outfit prose-headings:font-medium prose-p:leading-normal prose-p:text-left"
+					class="block prose prose-gray text-gray-500 dark:text-gray-400 prose-h3:text-lg dark:prose-invert prose-headings:text-gray-700 dark:prose-headings:text-gray-200 transition-colors duration-200 prose-p: prose-headings:mt-0 prose-headings:mb-2 prose-headings:transition-colors prose-headings:duration-200 prose-headings:font-medium prose-p:leading-normal"
 				>
-					<NuxtContent :document="experience" />
+					<NuxtContent
+						:document="experience"
+					/>
 				</article>
 			</div>
 		</div>
-		<separator class="mb-16" />
+		<separator
+			class="mb-16"
+		/>
 
-		<h4 class="text-lg font-outfit text-gray-200">Stuff I use</h4>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl gap-8 col-span-full">
-			<nuxt-link
-				v-for="technology in technologies"
-				:to="'/technologies/' + technology.slug"
-				:key="technology.position"
-				class="w-full p-6 shadow-xl bg-gray-800 flex flex-col group rounded"
-			>
-				<div class="flex items-center mb-6">
-					<div v-if="technology.icon" class>
-						<img :src="technology.icon" class="w-10" />
-					</div>
-					<div :class="[technology.icon ? 'ml-5' : '']">
-						<div
-							class="tracking-wide text-xl font-medium font-outfit mb-2 text-white"
-						>{{ technology.title }}</div>
-					</div>
-				</div>
-				<div class="text-opacity-75 text-gray-300 mb-6 flex-1" v-html="technology.description"></div>
-				<div
-					class="flex items-center transition-all duration-150 text-white lg:text-gray-500 group-hover:text-white"
-				>
-					<div class="mr-2">Read More</div>
-					<ph-arrow-right
-						class="transform transition-all duration-150 group-hover:translate-x-1"
-						size="20"
-					/>
-				</div>
-			</nuxt-link>
+		<h4
+			class="text-lg font-outfit text-gray-700 dark:text-gray-200 transition-colors duration-200 mb-8"
+		>Favorite OSS projects</h4>
+
+		<div
+			class="flex flex-wrap gap-2"
+		>
+			<div
+				v-for="technology of technologies"
+				class="bg-gray-800 px-3 rounded-full"
+			>{{ technology.title }}</div>
 		</div>
 	</div>
 </template>

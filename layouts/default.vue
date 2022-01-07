@@ -1,24 +1,72 @@
 <template>
-	<div class="min-h-screen p-10 lg:p-12 bg-white text-gray-800 dark:bg-gray-1000 dark:text-white">
-		<div class="mb-16 flex justify-between">
-			<ph-hamburger size="24" weight="light" />
-			<div @click="toggleTheme()">
-				<ph-sun v-if="theme === 'dark'" size="24" weight="light" />
-				<ph-moon v-else size="24" weight="light" />
+	<div
+		class="min-h-screen p-10 lg:p-12 bg-white dark:bg-gray-1000 transition-colors duration-200 text-gray-500 dark:text-gray-400"
+	>
+		<div
+			class="max-w-screen-lg mx-auto"
+		>
+			<div
+				class="mb-16 flex justify-between text-gray-800 dark:text-gray-100 transition-colors duration-200"
+			>
+				<div
+					@click="toggleTheme()"
+					class="cursor-pointer w-8 h-8 flex justify-center items-center rounded-full"
+				>
+					<ph-hamburger
+						size="24"
+						weight="light"
+					/>
+				</div>
+				<div
+					@click="toggleTheme()"
+					class="cursor-pointer ml-auto w-8 h-8 flex justify-center items-center rounded-full"
+				>
+					<transition
+						v-if="theme !== undefined"
+						name="scale"
+						mode="out-in"
+					>
+						<ph-sun
+							key="dark"
+							v-if="theme === 'dark'"
+							size="24"
+							weight="light"
+						/>
+						<ph-moon
+							key="light"
+							v-else
+							size="24"
+							weight="light"
+						/>
+					</transition>
+				</div>
 			</div>
-		</div>
 
-		<section class="mb-16">
-			<Nuxt />
-		</section>
-		<separator class="mb-16" />
+			<section
+				class="mb-16"
+			>
+				<Nuxt />
+			</section>
+			<separator
+				class="mb-16"
+			/>
 
-		<div class="text-2xl lg:text-4xl font-black mb-4">Important notes</div>
-		<div class="text-lg mb-8">Don't do drugs & drink enough water</div>
-		<div class="flex items-center space-x-2">
-			<div>Made with</div>
-			<ph-heart size="20" weight="fill" />
-			<div>in Munich</div>
+			<div
+				class="font-medium mb-4 text-gray-200"
+			>Important notes</div>
+			<div
+				class="mb-8 text-gray-400"
+			>Don't forget to drink enough water</div>
+			<div
+				class="flex items-center space-x-2"
+			>
+				<div>Made with</div>
+				<ph-heart
+					size="20"
+					weight="fill"
+				/>
+				<div>in Munich</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -41,10 +89,10 @@ export default {
 
 	setup(props) {
 
-		let theme = ref('dark')
+		let theme = ref(undefined)
 
 		onMounted(() => {
-			theme.value = window.localStorage.theme
+			theme.value = window.localStorage.theme || 'dark'
 		})
 
 		const toggleTheme = () => {
@@ -66,3 +114,15 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+.scale-enter-active,
+.scale-leave-active {
+	transition: all 0.1s ease-out;
+}
+.scale-enter,
+.scale-leave-to {
+	opacity: 0;
+	transform: scale(0);
+}
+</style>

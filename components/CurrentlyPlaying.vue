@@ -1,15 +1,38 @@
 <template>
-  <a v-if="playing && playing.is_playing == true" :href="playing.context.uri" class="block">
-    <div class="flex items-center gap-x-4 rounded-full p-1 w-full border-2 border-green-400">
-      <div class="flex-shrink-0 w-10 h-10 relative rounded-full overflow-hidden">
-        <img class="w-full" :src="image.url" alt />
+  <a
+    v-if="playing && playing.is_playing == true"
+    :href="playing.item.uri"
+    class="block"
+  >
+    <div
+      class="flex items-center gap-x-4 rounded-full p-1 w-full border-2 border-green-400 min-w-0"
+    >
+      <div
+        class="flex-shrink-0 w-10 h-10 relative rounded-full overflow-hidden"
+      >
+        <img
+          class="w-full"
+          :src="image.url"
+          alt
+        />
       </div>
-      <div>
-        <div class="font-medium text-sm">{{ playing.item.name }}</div>
-        <div class="text-xs">{{ artists }}</div>
+      <div
+        class="flex-shrink flex-grow-0 min-w-0"
+      >
+        <div
+          class="font-medium text-sm truncate"
+        >{{ playing.item.name }}</div>
+        <div
+          class="text-xs truncate"
+        >{{ artists }}</div>
       </div>
-      <div class="ml-auto flex items-center justify-center w-10 h-10">
-        <ph-spotify-logo size="24" weight="fill" />
+      <div
+        class="flex-shrink-0 ml-auto flex items-center justify-center w-10 h-10"
+      >
+        <ph-spotify-logo
+          size="24"
+          weight="fill"
+        />
       </div>
     </div>
   </a>
