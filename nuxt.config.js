@@ -84,13 +84,8 @@ export default {
     '@nuxt/image',
     '@nuxt/postcss8',
     '@nuxtjs/composition-api/module',
-    '@nuxtjs/google-analytics',
     '@nuxtjs/google-fonts',
   ],
-
-  googleAnalytics: {
-    // Options
-  },
 
   googleFonts: {
     families: {
