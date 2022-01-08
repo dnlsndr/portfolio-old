@@ -8,7 +8,7 @@
 			preset="avatar"
 			src="/me.jpg"
 			sizes="xs:480px lg:240px"
-			class="w-20 rounded-full mb-6"
+			class="w-20 h-20 rounded-full mb-6"
 		/>
 		<div
 			class="mb-1 text-2xl font-semibold font-outfit text-gray-900 dark:text-white transition-colors duration-200"
