@@ -46,9 +46,9 @@
 		<h4
 			class="text-gray-700 dark:text-gray-200 transition-colors duration-200 mb-1"
 		>Contact</h4>
-		<div>Wanna reach out to me?</div>
+		<div>Reach me at</div>
 		<div
-			class="mb-16"
+			class="mb-8"
 		>
 			<client-only
 				placeholder="Tricking them puny bots..."
@@ -57,6 +57,26 @@
 					class="not-italic font-gray-200"
 				>daniel.schneider@eramux.com</address>
 			</client-only>
+		</div>
+		<div
+			class="flex gap-4 mb-16 text-gray-700 dark:text-gray-200 transition-colors duration-200"
+		>
+			<a
+				href="https://twitter.com/dnl_sndr"
+			>
+				<ph-twitter-logo
+					size="24"
+					weight="light"
+				/>
+			</a>
+			<a
+				href="https://github.com/dnlsndr"
+			>
+				<ph-github-logo
+					size="24"
+					weight="light"
+				/>
+			</a>
 		</div>
 
 		<separator
@@ -333,13 +353,15 @@
 </template>
 
 <script>
-import { PhArrowRight } from 'phosphor-vue'
+import { PhArrowRight, PhTwitterLogo, PhGithubLogo } from 'phosphor-vue'
 import Separator from '@/components/Separator.vue'
 // import CurrentlyPlaying from '@/components/CurrentlyPlaying.vue'
 export default {
 	components: {
 		PhArrowRight,
 		Separator,
+		PhTwitterLogo,
+		PhGithubLogo
 		// CurrentlyPlaying,
 	},
 	head() {
