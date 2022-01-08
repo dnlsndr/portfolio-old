@@ -73,7 +73,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/scrollactive'
+    '~/plugins/gtag'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -84,8 +84,13 @@ export default {
     '@nuxt/image',
     '@nuxt/postcss8',
     '@nuxtjs/composition-api/module',
+    '@nuxtjs/google-analytics',
     '@nuxtjs/google-fonts',
   ],
+
+  googleAnalytics: {
+    // Options
+  },
 
   googleFonts: {
     families: {
