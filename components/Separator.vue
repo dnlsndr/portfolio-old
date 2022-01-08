@@ -15,7 +15,7 @@
 			]"
 		></div>
 		<div
-			class="flex-shrink-0 px-2 text-gray-400 dark:text-gray-500"
+			class="flex-shrink-0 px-2 text-gray-400 dark:text-gray-500 transition-colors duration-200"
 		>
 			<slot />
 		</div>
