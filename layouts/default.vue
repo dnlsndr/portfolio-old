@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="min-h-screen p-10 lg:p-12 bg-white dark:bg-gray-1000 transition-colors duration-200 text-gray-500 dark:text-gray-400"
+		class="min-h-screen p-8 lg:p-12 bg-white dark:bg-gray-1000 transition-colors duration-200 text-gray-500 dark:text-gray-400"
 	>
 		<div
 			class="max-w-screen-lg mx-auto"
@@ -52,18 +52,19 @@
 			/>
 
 			<div
-				class="font-medium mb-4 text-gray-200"
+				class="font-medium mb-4 text-gray-700 dark:text-gray-200 transition-colors duration-200"
 			>Important notes</div>
 			<div
-				class="mb-8 text-gray-400"
+				class="mb-8"
 			>Don't forget to drink enough water</div>
 			<div
-				class="flex items-center space-x-2"
+				class="flex items-center space-x-2 text-gray-900 dark:text-white transition-colors duration-200"
 			>
 				<div>Made with</div>
 				<ph-heart
 					size="20"
 					weight="fill"
+					class="text-red-400"
 				/>
 				<div>in Munich</div>
 			</div>

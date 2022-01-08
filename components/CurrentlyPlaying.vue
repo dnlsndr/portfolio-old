@@ -57,7 +57,7 @@ export default defineComponent({
     onMounted(() => {
       axios.get("https://api.spotify.com/v1/me/player/currently-playing", {
         headers: {
-          "Authorization": "Bearer BQB5YTwhQTjopCu4J42knmR0Hjq0RDnBShYNwIELe-pS0dMSIQ-yRrfZ29iff1UVNv5m7MvrXotIzKs0lR1MGrnaVNN2wuxx6ftPq-jdxGLVroejWzHPS_emvUzJYxg1ti3IqrDs4_-oIatC_A"
+          "Authorization": "Bearer MmYwMzJmNTFiMDU3NGZkZTg0YmIwZjU1MGM1ZWZhZTY6NTdjNThhZjJlODUzNDViMjk4MjI4ZWZlOWRiZjI0OWU="
         }
       }).then(res => {
         let data = res.data

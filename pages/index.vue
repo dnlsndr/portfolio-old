@@ -1,6 +1,8 @@
 <template>
 	<div>
-		<!-- <currently-playing class="mb-16" /> -->
+		<!-- <currently-playing
+			class="mb-16"
+		/>-->
 
 		<nuxt-img
 			preset="avatar"
@@ -58,26 +60,239 @@
 		</div>
 
 		<separator
-			class="col-span-full mb-16"
-		/>
+			class="col-span-full mb-16 font-outfit"
+		>Stats</separator>
 		<!-- tes -->
 		<div
-			class="flex flex-col gap-y-8 mb-16"
+			class="grid lg:grid-cols-3 gap-y-8 gap-x-16 mb-16"
 		>
-			<h4
-				class="text-lg font-outfit text-gray-700 dark:text-gray-200 transition-colors duration-200"
-			>Stats</h4>
 			<div
-				class="flex items-baseline"
+				class="flex gap-x-4 lg:flex-col items-baseline lg:items-center"
+			>
+				<div
+					class="text-2xl font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>{{ age }}</div>
+				<div
+					class="text-base"
+				>years old</div>
+			</div>
+			<div
+				class="flex gap-x-4 lg:flex-col items-baseline lg:items-center"
 			>
 				<div
 					class="text-2xl font-outfit text-gray-800 dark:text-white transition-colors duration-200"
 				>{{ totalExperience }}</div>
 				<div
-					class="text-base ml-4"
-				>total years of experience</div>
+					class="text-base"
+				>years experience</div>
 			</div>
+			<div
+				class="flex gap-x-4 lg:flex-col items-baseline lg:items-center"
+			>
+				<div
+					class="text-2xl font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>
+					3
+					<span
+						class="text-sm"
+					>±2</span>
+				</div>
+				<div
+					class="text-base"
+				>coffees a day</div>
+			</div>
+		</div>
+		<separator
+			class="col-span-full mb-16 font-outfit"
+		>Software stack</separator>
+		<div
+			class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 gap-x-16"
+		>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>Manjaro Linux</div>
+				<div
+					class="ml-auto"
+				>OS</div>
+			</div>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>Kubernetes</div>
+				<div
+					class="ml-auto"
+				>container orchestration</div>
+			</div>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>VSCode</div>
+				<div
+					class="ml-auto"
+				>editor</div>
+			</div>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>Slack</div>
+				<div
+					class="ml-auto"
+				>communication</div>
+			</div>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>Figma</div>
+				<div
+					class="ml-auto"
+				>UX/UI design</div>
+			</div>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>GitHub</div>
+				<div
+					class="ml-auto"
+				>VCS</div>
+			</div>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>Rust</div>
+				<div
+					class="ml-auto"
+				>systems</div>
+			</div>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>Golang</div>
+				<div
+					class="ml-auto"
+				>microservices</div>
+			</div>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>Vue.js</div>
+				<div
+					class="ml-auto"
+				>frontend</div>
+			</div>
+		</div>
+		<separator
+			class="col-span-full mb-16 font-outfit"
+		>Hardware stack</separator>
+		<div
+			class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 gap-x-16"
+		>
+			<div
+				class="flex items-center"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>OnePlus 7 Pro</div>
+				<div
+					class="ml-auto"
+				>phone</div>
+			</div>
+			<div
+				class="flex items-baseline"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>HermanMiller New Aeron</div>
+				<div
+					class="ml-auto"
+				>chair</div>
+			</div>
+			<div
+				class="flex items-baseline"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>2 x Dell U2717D</div>
+				<div
+					class="ml-auto"
+				>monitor</div>
+			</div>
+			<div
+				class="flex items-baseline"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>MX Master 3</div>
+				<div
+					class="ml-auto"
+				>mouse</div>
+			</div>
+			<div
+				class="flex items-baseline"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>60% DIY with QMK</div>
+				<div
+					class="ml-auto"
+				>keyboard</div>
+			</div>
+			<div
+				class="flex items-baseline"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>Bose NC 700</div>
+				<div
+					class="ml-auto"
+				>headphones</div>
+			</div>
+			<div
+				class="flex items-baseline"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>RODE NT-USB mini</div>
+				<div
+					class="ml-auto"
+				>microphone</div>
+			</div>
+			<div
+				class="flex items-baseline"
+			>
+				<div
+					class="text-lg font-outfit text-gray-800 dark:text-white transition-colors duration-200"
+				>C920 HD Pro</div>
+				<div
+					class="ml-auto"
+				>webcam</div>
+			</div>
+		</div>
 
+		<separator
+			class="col-span-full mb-16 font-outfit"
+		>Experience</separator>
+		<div
+			class="mb-16 grid lg:grid-cols-2 gap-16"
+		>
 			<div
 				v-for="(experience, index) in experiences"
 				:key="index"
@@ -94,7 +309,7 @@
 				</div>
 
 				<article
-					class="block prose prose-gray text-gray-500 dark:text-gray-400 prose-h3:text-lg dark:prose-invert prose-headings:text-gray-700 dark:prose-headings:text-gray-200 transition-colors duration-200 prose-p: prose-headings:mt-0 prose-headings:mb-2 prose-headings:transition-colors prose-headings:duration-200 prose-headings:font-medium prose-p:leading-normal"
+					class="block prose-p:mb-0 prose prose-gray text-gray-500 dark:text-gray-400 prose-h3:text-lg dark:prose-invert prose-headings:text-gray-700 dark:prose-headings:text-gray-200 transition-colors duration-200 prose-headings:mt-0 prose-headings:mb-2 prose-headings:transition-colors prose-headings:duration-200 prose-headings:font-medium prose-p:leading-normal"
 				>
 					<NuxtContent
 						:document="experience"
@@ -104,18 +319,14 @@
 		</div>
 		<separator
 			class="mb-16"
-		/>
-
-		<h4
-			class="text-lg font-outfit text-gray-700 dark:text-gray-200 transition-colors duration-200 mb-8"
-		>Favorite OSS projects</h4>
+		>Favorite OSS projects</separator>
 
 		<div
 			class="flex flex-wrap gap-2"
 		>
 			<div
 				v-for="technology of technologies"
-				class="bg-gray-800 px-3 rounded-full"
+				class="bg-gray-200 dark:bg-gray-800 px-3 rounded-full"
 			>{{ technology.title }}</div>
 		</div>
 	</div>
@@ -173,30 +384,35 @@ export default {
 			.sortBy('start', 'desc')
 			.fetch()
 
-		let totalExperience = experiences.map(item => parseInt(formatDistanceStrict(
+
+		function monthDiff(d1, d2) {
+			var months;
+			months = (d2.getFullYear() - d1.getFullYear()) * 12;
+			months -= d1.getMonth();
+			months += d2.getMonth();
+			return months <= 0 ? 0 : months;
+		}
+
+		let age = (monthDiff(
+			new Date(1998, 9, 8),
+			new Date()
+		) / 12).toFixed(1)
+
+		let totalExperience = experiences.map(item => monthDiff(
 			new Date(item.start),
-			item.end == 'now' ? new Date() : new Date(item.end),
-			{
-				roundingMethod: "ceil",
-				unit: "month",
-				addSuffix: false
-			}
-		)) / 12).reduce((a, b) => a + b).toFixed(1)
+			item.end == 'now' ? new Date() : new Date(item.end)
+		) / 12).reduce((a, b) => a + b).toFixed(1)
 
 		experiences = experiences.map((exp) => ({
 			...exp,
-			distance: (parseInt(formatDistanceStrict(
+			distance: (monthDiff(
 				new Date(exp.start),
-				exp.end == 'now' ? new Date() : new Date(exp.end),
-				{
-					roundingMethod: "ceil",
-					unit: "month",
-					addSuffix: false
-				}
-			)) / 12).toFixed(1),
+				exp.end == 'now' ? new Date() : new Date(exp.end)
+			) / 12).toFixed(1),
 		}))
 
 		return {
+			age,
 			totalExperience,
 			technologies,
 			experiences,
