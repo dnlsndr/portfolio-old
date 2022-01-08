@@ -335,15 +335,12 @@
 <script>
 import { PhArrowRight } from 'phosphor-vue'
 import Separator from '@/components/Separator.vue'
-import CurrentlyPlaying from '@/components/CurrentlyPlaying.vue'
-import KnowledgeIndicator from '@/components/KnowledgeIndicator.vue'
-import { formatDistanceStrict } from 'date-fns'
+// import CurrentlyPlaying from '@/components/CurrentlyPlaying.vue'
 export default {
 	components: {
 		PhArrowRight,
 		Separator,
-		CurrentlyPlaying,
-		KnowledgeIndicator,
+		// CurrentlyPlaying,
 	},
 	head() {
 		return {
