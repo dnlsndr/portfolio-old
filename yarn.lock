@@ -949,6 +949,11 @@
   resolved "https://registry.npmjs.org/@csstools/convert-colors/-/convert-colors-1.4.0.tgz"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@dnlsndr/vue-phosphor-icons@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@dnlsndr/vue-phosphor-icons/-/vue-phosphor-icons-0.0.5.tgz#b34863e31b74b17a82bd7d0f900cc0e228d42293"
+  integrity sha512-oIKXLttoJ6ZLznxgh0ZuLZXnPlpSZwmoZIVuKgO/rJbZ1KXaoedKXsg2SyQmRe8RxC6VtOTWd4rrmGdBHS8u1A==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz"
@@ -8880,11 +8885,6 @@ pbkdf2@^3.0.3:
     ripemd160 "^2.0.1"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
-
-phosphor-vue@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.npmjs.org/phosphor-vue/-/phosphor-vue-1.4.0.tgz"
-  integrity sha512-5Oti/zfezP3LRfciZmzovd2+ih5VWEnLFI+3K0ZG4NVkAqwdkx4B3vJzCYGpHMNZG5+c+xW3eB4gf3H7hBiR1Q==
 
 picocolors@^1.0.0:
   version "1.0.0"
