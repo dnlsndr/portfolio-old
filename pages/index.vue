@@ -58,10 +58,10 @@
     <div
       class="flex gap-4 mb-16 text-gray-700 dark:text-gray-200 transition-colors duration-200"
     >
-      <a href="https://twitter.com/dnl_sndr" target="_blank">
+      <a href="https://twitter.com/dnl_sndr">
         <ph-twitter-logo size="24" weight="light" />
       </a>
-      <a href="https://github.com/dnlsndr" target="_blank">
+      <a href="https://github.com/dnlsndr">
         <ph-github-logo size="24" weight="light" />
       </a>
     </div>
